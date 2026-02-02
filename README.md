@@ -12,8 +12,22 @@ To Develop a python program to Plot a time series data (population/ market price
 5. Display the graph.
 # PROGRAM:
 
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
+df = pd.read_csv(r"/content/car_price.csv")
+
+df_clean = df.dropna(subset=["Year", "Mileage"])
+
+
+plt.figure()
+plt.scatter(df_clean["Year"], df_clean["Mileage"])
+plt.xlabel("Year")   
+plt.ylabel("Mileage")
+plt.title("Year vs Mileage")
+
+plt.show()
 
 
 
@@ -23,6 +37,7 @@ To Develop a python program to Plot a time series data (population/ market price
 
 
 # OUTPUT:
+![Uploading image.png…]()
 
 
 
